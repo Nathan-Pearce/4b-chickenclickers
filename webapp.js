@@ -1,8 +1,8 @@
 // JavaScript Document
 
 //var name = prompt("Hi there! What do you want to name you egg company?");
-	//var valid=confirm("is " +name+ " correct?")
-	//document.write(" "+name+" ");
+//var valid=confirm("is " +name+ " correct?")
+//document.write(" "+name+" ");
 	
 	
 // global variables
@@ -14,60 +14,69 @@ var farms = 0;
 var eggtopia = 0;
 var universee = 0;
 
+// load cookies
 window.onload = function() {
-	// load cookies
 	load_cookies();
 	update_values();
 };
+
+//adding eggs when the chicken is clicked
 
 function chicken_clicker() {
 	eggs++;
 	update_values();
 }
 
-// buy("chicks");
+//how to buy the different items
 function buy(sel) {
 	switch(sel) {
+		//cost of "chicks"
 		case "chicks":
 			if(eggs >= 10) {
 				eggs-=10;
 				chicks++;
 			}
 			break;
+		//cost of "cartons"
 		case "cartons":
 			if(eggs >= 100) {
 				eggs-=100;
 				cartons++;
 			}
-		break;
+			break;
+		//cost of "trucks"
 		case "trucks":
 			if(eggs >= 500) {
 				eggs-=500;
 				trucks++;
-	}
+			}
 			break;
+		//cost of "farms"
 		case "farms":
 			if(eggs >= 1000) {
 				eggs-=1000;
 				farms++;
 			}
 			break;
+		//cost of "eggtopia"
 		case "eggtopia":
 			if(eggs >= 100000) {
 				eggs-=100000;
 				eggtopia++;
 			}
 			break;
-		case "universee":
+		//cost of "universe"
+		case "universe":
 			if(eggs >= 100000000) {
 				eggs-=100000000;
 				universee++;
-				break;
+			break;
 			}
 			}
 	update_values();
 }
 
+//update values when something is clicked
 function update_values() {
 	document.getElementById("eggs").value= Math.floor(eggs);
 	document.getElementById("chicks").value= chicks;
@@ -79,6 +88,7 @@ function update_values() {
 	
 }
 
+//amount of automatic clickers that are added
 setInterval(bonus, 100);
 function bonus() {
 	eggs+=chicks*0.05;
@@ -92,7 +102,7 @@ function bonus() {
 }
 
 
-
+//the clear button
 function clear(){
 	eggs = 0;
 	chicks= 0;
@@ -131,6 +141,7 @@ function save_game() {
 
 }
 
+//getting the cookie
 function get_cookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -147,6 +158,7 @@ function get_cookie(cname) {
     return "";
 }
 
+//loading the cookie
 function load_cookies() {
     eggs = Number(get_cookie("eggs"));
     chicks = Number(get_cookie("chicks"));
