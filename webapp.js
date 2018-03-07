@@ -5,7 +5,7 @@
 //document.write(" "+name+" ");
 	
 	
-// global variables
+//global variables
 var eggs = 0;
 var chicks = 0;
 var cartons = 0;
@@ -14,14 +14,13 @@ var farms = 0;
 var eggtopia = 0;
 var universee = 0;
 
-// load cookies
+//load cookies
 window.onload = function() {
 	load_cookies();
 	update_values();
 };
 
 //adding eggs when the chicken is clicked
-
 function chicken_clicker() {
 	eggs++;
 	update_values();
@@ -114,14 +113,11 @@ function clear(){
 }
 
 function changeCSS(cssFile, cssLinkIndex) {
-
     var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-
     var newlink = document.createElement("link");
     newlink.setAttribute("rel", "stylesheet");
     newlink.setAttribute("type", "text/css");
     newlink.setAttribute("href", cssFile);
-
     document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 }
 

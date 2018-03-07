@@ -2,7 +2,7 @@
 /* CSS Document */
 
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
-/* texts */
+/* the attributes of the background */
 body {
     background-image: url("images/barn.jpg");
 	background-size: cover;
@@ -17,6 +17,8 @@ body {
 	BASIC STRUCTURE
 
 -------------------------------------------------*/
+
+/* the attributes of the title */
 #title {
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -24,6 +26,7 @@ body {
 	text-align: center;
 }
 
+/* the attribute of the chicken image */
 #leftColumn img {
 	width: 100%;
 }
@@ -34,12 +37,14 @@ body {
 	margin:20px auto;
 }
 
+/* the attributes of the left column */
 #leftColumn	 {
 	background-color: white;
 	height: 650px;
 	float: left;
 	border-radius: 15px;
 }
+/* the attributes of the right column */
 #rightColumn {
 	background-color: white;
 	float: right;
@@ -48,7 +53,6 @@ body {
 }
 
 /* responsive widths*/
-
 @media screen and (max-width: 980px) {
 	#wrapper {
 		width: 94%;
